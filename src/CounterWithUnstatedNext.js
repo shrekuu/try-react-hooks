@@ -25,8 +25,12 @@ function CounterDisplay () {
 function CounterWithUnstatedNext () {
   return (
     <Counter.Provider>
-      <CounterDisplay/>
-      <CounterDisplay/>
+      <CounterDisplay />
+
+      <Counter.Provider initialState={2}>
+        <CounterDisplay />
+      </Counter.Provider>
+
     </Counter.Provider>
   )
 }

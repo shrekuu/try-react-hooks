@@ -12,6 +12,7 @@ export default class CounterWithoutHooks extends Component {
   render () {
     const { count } = this.state
 
+    // 这里当然是修改同一个 this.state.count 啦
     return (
       <div>
         <div>counter without hooks</div>

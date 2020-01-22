@@ -25,8 +25,12 @@ function CounterDisplay () {
 function CounterWithConstate () {
   return (
     <CounterProvider>
-      <CounterDisplay/>
-      <CounterDisplay/>
+      <CounterDisplay />
+
+      <CounterProvider>
+        <CounterDisplay />
+      </CounterProvider>
+
     </CounterProvider>
   )
 }

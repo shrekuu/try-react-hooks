@@ -4,7 +4,7 @@ function useCounter () {
   let [count, setCount] = useState(0)
   let increment = () => setCount(count + 1)
   let decrement = () => setCount(count - 1)
-  return {count, decrement, increment }
+  return { count, decrement, increment }
 }
 
 let Counter = createContext(null)
@@ -23,10 +23,17 @@ function CounterDisplay () {
 
 function CounterWithHooks () {
   let counter = useCounter()
+
+  // 两个 CounterDisplay 区分开来
+
   return (
     <Counter.Provider value={counter}>
-      <CounterDisplay/>
-      <CounterDisplay/>
+      <CounterDisplay />
+
+      <Counter.Provider value={counter}>
+        <CounterDisplay />
+      </Counter.Provider>
+
     </Counter.Provider>
   )
 }
